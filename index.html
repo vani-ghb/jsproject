@@ -1,0 +1,488 @@
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FoodieRecipes - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <style>
+    /* General Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #fefefe;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    nav .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #0abd13;
+    }
+
+    nav .nav-links a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color:white;
+      font-weight: 500;
+    }
+
+    nav .nav-links a:hover {
+      color: #0abd13;
+    }
+
+    header {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    header video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content .btn-primary {
+      background: #0abd13;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero-content .btn-primary:hover {
+      background: #0b9f10;
+    }
+
+    section {
+      margin: 3rem 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0abd13;
+    }
+
+    .categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+    .category-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .category-card h3 {
+      margin: 1rem 0 0.5rem;
+      color: #333;
+    }
+
+    .category-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .see-more-btn {
+      margin-top: 10px;
+      background: #0abd13;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .see-more-btn:hover {
+      background: #0b9f10;
+    }
+
+    .testimonials {
+      text-align: center;
+    }
+
+    .testimonial {
+      background: #f2f2f2;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: inline-block;
+      max-width: 600px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial span {
+      font-weight: bold;
+      color: #0abd13;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0abd13;
+      color: #fff;
+      margin-top: 3rem;
+    }
+
+    /* Modals */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+
+    .close-btn {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 1rem;
+      color: #0abd13;
+    }
+
+    .modal-content h3 {
+      margin-top: 1.5rem;
+      color: #0abd13;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .modal-buttons button {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .like-btn {
+      background: #ff4081;
+    }
+
+    .like-btn:hover {
+      background: #e91e63;
+    }
+
+    .save-btn {
+      background: #0abd13;
+    }
+
+    .save-btn:hover {
+      background: #0b9f10;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #0abd13;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #0b9f10;
+    }
+  </style>
+<div class="container">
+
+  <header id="home">
+    <nav>
+      <div class="logo">FoodieRecipes</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+        <a id="loginBtn" href="javascript:void(0)">Login</a>
+      </div>
+    </nav>
+
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <h1>Discover Recipes That Delight</h1>
+      <p>Explore thousands of recipes from around the world. Cook. Eat. Enjoy.</p>
+      <a href="login.html" class="btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About FoodieRecipes</h2>
+      <p>
+        FoodieRecipes is your go-to destination for finding inspiration in the kitchen...
+      </p>
+    </section>
+
+    <section>
+      <h2>Popular Categories</h2>
+      <div class="categories">
+
+        <!-- Breakfast -->
+        <div class="category-card">
+          <h3>Breakfast</h3>
+          <p>Start your day with energizing meals.</p>
+          <div class="category-items">
+            <div class="category-item">
+              <img src="pancake.jpg" alt="Pancake" />
+              <h4>Classic Pancakes</h4>
+              <button class="see-more-btn" data-name="Classic Pancakes" data-category="Breakfast">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="avacodo.jpg" alt="Avocado Toast" />
+              <h4>Avocado Toast</h4>
+              <button class="see-more-btn" data-name="Avocado Toast" data-category="Breakfast">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="omlete.jpg" alt="Omelette" />
+              <h4>Omelette</h4>
+              <button class="see-more-btn" data-name="Omelette" data-category="Breakfast">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="smoothie.jpeg" alt="Smoothie" />
+              <h4>Smoothie</h4>
+              <button class="see-more-btn" data-name="Smoothie" data-category="Breakfast">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="french.jpeg" alt="French Toast" />
+              <h4>French Toast</h4>
+              <button class="see-more-btn" data-name="French Toast" data-category="Breakfast">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vegetarian -->
+        <div class="category-card">
+          <h3>Vegetarian</h3>
+          <p>Wholesome plant-based dishes you'll love.</p>
+          <div class="category-items">
+            <div class="category-item">
+              <img src="vegetrain.jpeg" alt="Vegetable Dish" />
+              <h4>Vegetable Dish</h4>
+              <button class="see-more-btn" data-name="Vegetable Dish" data-category="Vegetarian">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Caprese.jpeg" alt="Caprese Salad" />
+              <h4>Caprese Salad</h4>
+              <button class="see-more-btn" data-name="Caprese Salad" data-category="Vegetarian">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Spinach.jpeg" alt="Spinach Dish" />
+              <h4>Spinach Dish</h4>
+              <button class="see-more-btn" data-name="Spinach Dish" data-category="Vegetarian">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Stuffed.jpeg" alt="Stuffed Peppers" />
+              <h4>Stuffed Peppers</h4>
+              <button class="see-more-btn" data-name="Stuffed Peppers" data-category="Vegetarian">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="mushroom.jpeg" alt="Mushroom Dish" />
+              <h4>Mushroom Dish</h4>
+              <button class="see-more-btn" data-name="Mushroom Dish" data-category="Vegetarian">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Meals -->
+        <div class="category-card">
+          <h3>Quick Meals</h3>
+          <p>Delicious dishes in under 30 minutes.</p>
+          <div class="category-items">
+            <div class="category-item">
+              <img src="pasta.jpg" alt="Pasta" />
+              <h4>Pasta</h4>
+              <button class="see-more-btn" data-name="Pasta" data-category="Quick Meals">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="chicken.jpeg" alt="Chicken Dish" />
+              <h4>Chicken Dish</h4>
+              <button class="see-more-btn" data-name="Chicken Dish" data-category="Quick Meals">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Stir Fry Noodles.jpeg" alt="Stir Fry Noodles" />
+              <h4>Stir Fry Noodles</h4>
+              <button class="see-more-btn" data-name="Stir Fry Noodles" data-category="Quick Meals">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="quesadilla.jpeg" alt="Quesadilla" />
+              <h4>Quesadilla</h4>
+              <button class="see-more-btn" data-name="Quesadilla" data-category="Quick Meals">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="egg fried rice.jpeg" alt="Egg Fried Rice" />
+              <h4>Egg Fried Rice</h4>
+              <button class="see-more-btn" data-name="Egg Fried Rice" data-category="Quick Meals">See More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="category-card">
+          <h3>Desserts</h3>
+          <p>Indulge in sweet delights and baked goods.</p>
+          <div class="category-items">
+            <div class="category-item">
+              <img src="choclate browine.jpeg" alt="Chocolate Brownie" />
+              <h4>Chocolate Brownie</h4>
+              <button class="see-more-btn" data-name="Chocolate Brownie" data-category="Desserts">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Fruit Tart.webp" alt="Fruit Tart" />
+              <h4>Fruit Tart</h4>
+              <button class="see-more-btn" data-name="Fruit Tart" data-category="Desserts">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Lemon Bars.jpeg" alt="Lemon Bars" />
+              <h4>Lemon Bars</h4>
+              <button class="see-more-btn" data-name="Lemon Bars" data-category="Desserts">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Cheesecake.jpeg" alt="Cheesecake" />
+              <h4>Cheesecake</h4>
+              <button class="see-more-btn" data-name="Cheesecake" data-category="Desserts">See More</button>
+            </div>
+            <div class="category-item">
+              <img src="Chocolate Mousse.jpeg" alt="Chocolate Mousse" />
+              <h4>Chocolate Mousse</h4>
+              <button class="see-more-btn" data-name="Chocolate Mousse" data-category="Desserts">See More</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What People Say</h2>
+      <div class="testimonial">
+        <p>"FoodieRecipes changed the way I cook! Everything is so simple and tasty."</p>
+        <span>- vani, Hyderabad</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to share your recipes? We'd love to hear from you!</p>
+      <p><strong>Email:</strong> support@foodierecipes.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Location:</strong> Hyderabad, India</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 FoodieRecipes. All rights reserved.
+  </footer>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

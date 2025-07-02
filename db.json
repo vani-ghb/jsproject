@@ -1,0 +1,147 @@
+{
+  "recipes": [
+    {
+      "category": "Breakfast",
+      "name": "Classic Pancakes",
+      "image": "pancake.jpg",
+      "ingredients": ["1 cup flour", "2 tbsp sugar", "1 egg", "1 cup milk", "2 tbsp butter"],
+      "instructions": "Mix ingredients. Pour on skillet. Cook until golden."
+    },
+    {
+      "category": "Breakfast",
+      "name": "Avocado Toast",
+      "image": "avacodo.jpg",
+      "ingredients": ["2 slices bread", "1 avocado", "Salt", "Pepper"],
+      "instructions": "Toast bread. Mash avocado. Spread. Season."
+    },
+    {
+      "category": "Breakfast",
+      "name": "Omelette",
+      "image": "omlete.jpg",
+      "ingredients": ["2 eggs", "Salt", "Pepper", "Veggies"],
+      "instructions": "Whisk eggs. Pour in pan. Add veggies. Fold."
+    },
+    {
+      "category": "Breakfast",
+      "name": "Smoothie Bowl",
+      "image": "smoothie.jpg",
+      "ingredients": ["Berries", "Banana", "Yogurt", "Granola"],
+      "instructions": "Blend fruit. Pour in bowl. Top with granola."
+    },
+    {
+      "category": "Breakfast",
+      "name": "French Toast",
+      "image": "french.jpg",
+      "ingredients": ["Bread", "Eggs", "Milk", "Sugar", "Cinnamon"],
+      "instructions": "Dip bread in mixture. Fry until golden."
+    },
+
+    {
+      "category": "Vegetarian",
+      "name": "Veggie Stir Fry",
+      "image": "vegetrain.jpeg",
+      "ingredients": ["Broccoli", "Carrots", "Bell peppers", "Soy sauce"],
+      "instructions": "Stir fry veggies. Add sauce. Serve with rice."
+    },
+    {
+      "category": "Vegetarian",
+      "name": "Caprese Salad",
+      "image": "caprese.jpg",
+      "ingredients": ["Tomatoes", "Mozzarella", "Basil", "Olive oil"],
+      "instructions": "Layer tomatoes and cheese. Drizzle oil. Top with basil."
+    },
+    {
+      "category": "Vegetarian",
+      "name": "Spinach Pasta",
+      "image": "spinach.jpg",
+      "ingredients": ["Pasta", "Spinach", "Garlic", "Olive oil"],
+      "instructions": "Cook pasta. Sauté spinach. Toss together."
+    },
+    {
+      "category": "Vegetarian",
+      "name": "Stuffed Peppers",
+      "image": "stuffed.jpg",
+      "ingredients": ["Bell peppers", "Rice", "Veggies", "Cheese"],
+      "instructions": "Stuff peppers. Bake until tender."
+    },
+    {
+      "category": "Vegetarian",
+      "name": "Mushroom Risotto",
+      "image": "mushroom.jpg",
+      "ingredients": ["Rice", "Mushrooms", "Stock", "Parmesan"],
+      "instructions": "Cook rice slowly, adding stock. Stir in mushrooms."
+    },
+
+    {
+      "category": "Quick Meals",
+      "name": "Pasta Primavera",
+      "image": "pasta.jpg",
+      "ingredients": ["Pasta", "Mixed veggies", "Parmesan", "Olive oil"],
+      "instructions": "Cook pasta. Toss with veggies and cheese."
+    },
+    {
+      "category": "Quick Meals",
+      "name": "Chicken Wrap",
+      "image": "chicken.jpg",
+      "ingredients": ["Tortilla", "Chicken", "Lettuce", "Sauce"],
+      "instructions": "Wrap chicken and veggies in tortilla."
+    },
+    {
+      "category": "Quick Meals",
+      "name": "Stir Fry Noodles",
+      "image": "Stir Fry Noodles.jpg",
+      "ingredients": ["Noodles", "Veggies", "Soy sauce"],
+      "instructions": "Stir fry noodles and veggies."
+    },
+    {
+      "category": "Quick Meals",
+      "name": "Quesadilla",
+      "image": "quesadilla.jpg",
+      "ingredients": ["Tortilla", "Cheese", "Veggies"],
+      "instructions": "Fill tortilla with cheese. Cook until golden."
+    },
+    {
+      "category": "Quick Meals",
+      "name": "Egg Fried Rice",
+      "image": "egg fried rice.jpg",
+      "ingredients": ["Rice", "Eggs", "Veggies", "Soy sauce"],
+      "instructions": "Fry rice with eggs and veggies."
+    },
+
+    {
+      "category": "Desserts",
+      "name": "Chocolate Brownie",
+      "image": "choclate browine.jpeg",
+      "ingredients": ["Flour", "Cocoa", "Sugar", "Butter", "Eggs"],
+      "instructions": "Mix ingredients. Bake at 180°C for 25 min."
+    },
+    {
+      "category": "Desserts",
+      "name": "Fruit Tart",
+      "image": "fruit tart.jpg",
+      "ingredients": ["Tart shell", "Custard", "Fresh fruit"],
+      "instructions": "Fill tart shell. Top with fruit."
+    },
+    {
+      "category": "Desserts",
+      "name": "Lemon Bars",
+      "image": "lemon bars.jpg",
+      "ingredients": ["Flour", "Sugar", "Lemon juice", "Butter"],
+      "instructions": "Bake crust. Pour lemon mix. Bake again."
+    },
+    {
+      "category": "Desserts",
+      "name": "Cheesecake",
+      "image": "cheesecake.jpg",
+      "ingredients": ["Cream cheese", "Sugar", "Eggs", "Crust"],
+      "instructions": "Mix filling. Bake in crust."
+    },
+    {
+      "category": "Desserts",
+      "name": "Chocolate Mousse",
+      "image": "chocolate mousse.jpg",
+      "ingredients": ["Chocolate", "Cream", "Sugar"],
+      "instructions": "Melt chocolate. Fold in cream. Chill."
+    }
+  ]
+}

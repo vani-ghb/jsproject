@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dish Ingredients</title>
+</head>
+<body>
+  <h1>Ingredients</h1>
+  <div id="ingredients-container"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id"); // dish id from URL
+    const url = `http://localhost:3000/teluguDishes/${id}`; // API endpoint
+    const container = document.getElementById("ingredients-container");
+
+    fetch(url)
+      .then(res => res.json())
+      .then(dish => {
+        container.innerHTML = `
+          <h2>${dish.name}</h2>
+          <ul>
+            <li>${dish.ingredients["igd-1"]}</li>
+            <li>${dish.ingredients["id-2"]}</li>
+            <li>${dish.ingredients["id-3"]}</li>
+            <li>${dish.ingredients["id-4"]}</li>
+            <li>${dish.ingredients["id-5"]}</li>
+            <li>${dish.ingredients["id-6"]}</li>
+            <li>${dish.ingredients["id-7"]}</li>
+            <li>${dish.ingredients["id-8"]}</li>
+            <li>${dish.ingredients["id-9"]}</li>
+            <li>${dish.ingredients["id-10"]}</li>
+          </ul>
+          <a href="index.html">⬅ Back to Menu</a>
+        `;
+      })
+      .catch(() => {
+        container.innerHTML = "<p>Failed to load ingredients.</p>";
+      });
+  </script>
+</body>
+</html>
